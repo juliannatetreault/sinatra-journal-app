@@ -13,9 +13,9 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
+    background-color: #072f58;
+    color: rgb(99, 96, 96);
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 18px;
   }
 

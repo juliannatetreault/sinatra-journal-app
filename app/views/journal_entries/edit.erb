@@ -1,0 +1,16 @@
+<body>
+
+<h1 class="text-center">To edit an existing entry, please completely fill out the form below: </h1>
+<h2 class="text-center">---------------------------------------------------------------------</h2>
+<form method="post" action="/journal_entries/<%= @journal_entry.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH" />
+
+    <label for="content">Edit an entry:
+    <textarea name="content"><%= @journal_entry.content %>
+    </textarea>
+    </label>
+
+    <input type="submit" id="submit" value="Publish Edits" />
+</form>
+
+</body>

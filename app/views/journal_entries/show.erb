@@ -1,0 +1,12 @@
+<div class="text-center">
+<h3><%= @journal_entry.user.username %></h3>
+
+<p><%= @journal_entry.content %></p>
+
+<form method="post" action="/journal_entries/<%= @journal_entry.id %>/delete">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" id="submit" value="Delete Entry">
+</form>
+
+<p>Delete!? I'd like to <a href= "<%= @journal_entry.id %>/edit">edit</a> my entry instead.</p>
+</div>

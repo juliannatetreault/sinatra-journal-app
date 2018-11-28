@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "dreamy"
-    #use Rack::Flash, :sweep => true
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -15,13 +15,20 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do 
+
     def logged_in?
-      session[:user_id]
+      !!current_user
     end
 
     def current_user 
-      @current_user = User.find_by_id(session[:user_id])
+      @current_user ||= User.find_by(id: session[:user_id]) if session[:id]
     end
   end
 
-end
+   def logout!
+      session.clear
+   end
+   
+  end
+
+
